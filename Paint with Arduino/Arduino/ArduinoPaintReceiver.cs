@@ -20,6 +20,11 @@ namespace Paint_with_Arduino.Arduino
         {
         }
 
+        ~ArduinoPaintReceiver()
+        {
+            Dispose();
+        }
+
         private void Run()
         {
             while(_running)
@@ -95,10 +100,7 @@ namespace Paint_with_Arduino.Arduino
 
         public void Dispose()
         {
-            if(_port != null)
-            {
-                _port.Dispose();
-            }
+            Close();
         }
     }
 }
